@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twitter Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Left menu on wide screens -->
+    <aside class="sidebar" aria-label="Primary navigation">
+      <button class="nav-btn active" data-nav="home" type="button">Home</button>
+      <button class="nav-btn" data-nav="profile" type="button">Profile</button>
+      <button class="nav-btn" data-nav="ai" type="button">Ask AI</button>
+    </aside>
+
+    <!-- Middle area where Home or Profile shows up -->
+    <main class="main-column">
+      <header class="top-header">
+        <h1 id="pageTitle">Home</h1>
+        <button id="backToHomeBtn" class="btn-outline" type="button" style="display: none;">
+          Back to Feed
+        </button>
+      </header>
+      <div id="viewContainer"></div>
+    </main>
+
+    <!-- Right box on wide screens -->
+    <aside class="right-rail" aria-label="Who to follow">
+      <div class="suggestion-card">
+        <h2>Who to follow</h2>
+        <div id="whoToFollowList"></div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Bottom menu bar on phones -->
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <button class="nav-btn active" data-nav="home" type="button">Home</button>
+    <button class="nav-btn" data-nav="profile" type="button">Profile</button>
+    <button class="nav-btn" data-nav="ai" type="button">Ask AI</button>
+  </nav>
+
+  <!-- Round floating AI button in the bottom-right corner -->
+  <button id="fabAi" class="fab-ai" type="button" title="Ask AI" aria-label="Open AI chat">
+    AI
+  </button>
+
+  <!-- Pop-up chat drawer -->
+  <section id="aiPanel" class="ai-panel" aria-label="Ask AI chat panel">
+    <div class="ai-header">
+      <span>Ask AI</span>
+      <button id="closeAiBtn" class="ai-close" type="button">Close</button>
+    </div>
+    <div id="aiMessages" class="ai-messages"></div>
+    <form id="aiForm" class="ai-form">
+      <input
+        id="aiInput"
+        class="ai-input"
+        type="text"
+        placeholder="Ask about any post"
+        autocomplete="off"
+        required
+      />
+      <button id="aiSendBtn" class="btn-primary" type="submit">Send</button>
+    </form>
+  </section>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
